@@ -3,12 +3,23 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 
 import styles from './BannerSection.module.scss'
-import BannerSlider from '../assets/banner-slider.jpg'
+import BannerSliderImg from '../assets/banner-slider.jpg'
 import Sale1 from '../assets/content/sale-1.png'
 
 import 'swiper/swiper-bundle.min.css'
 
 const BannerSection = () => {
+  const slides = Array.from({ length: 6 }, (_, index) => (
+    <SwiperSlide key={index}>
+      <a className="banner-section__slider-item" href="/#">
+        <img
+          className="banner-section__slider-img"
+          src={BannerSliderImg}
+          alt=""
+        />
+      </a>
+    </SwiperSlide>
+  ))
   return (
     <section className="banner-section">
       <div className="container">
@@ -23,60 +34,7 @@ const BannerSection = () => {
               onSlideChange={() => console.log('slide change')}
               onSwiper={(swiper) => console.log(swiper)}
             >
-              <SwiperSlide>
-                <a className="banner-section__slider-item" href="/#">
-                  <img
-                    className="banner-section__slider-img"
-                    src={BannerSlider}
-                    alt=""
-                  />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a className="banner-section__slider-item" href="/#">
-                  <img
-                    className="banner-section__slider-img"
-                    src={BannerSlider}
-                    alt=""
-                  />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a className="banner-section__slider-item" href="/#">
-                  <img
-                    className="banner-section__slider-img"
-                    src={BannerSlider}
-                    alt=""
-                  />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a className="banner-section__slider-item" href="/#">
-                  <img
-                    className="banner-section__slider-img"
-                    src={BannerSlider}
-                    alt=""
-                  />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a className="banner-section__slider-item" href="/#">
-                  <img
-                    className="banner-section__slider-img"
-                    src={BannerSlider}
-                    alt=""
-                  />
-                </a>
-              </SwiperSlide>
-              <SwiperSlide>
-                <a className="banner-section__slider-item" href="/#">
-                  <img
-                    className="banner-section__slider-img"
-                    src={BannerSlider}
-                    alt=""
-                  />
-                </a>
-              </SwiperSlide>
+              {slides}
             </Swiper>
           </div>
           <a
