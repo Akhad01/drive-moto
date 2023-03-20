@@ -1,0 +1,119 @@
+.banner_section__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner_section__slider {
+  max-width: 870px;
+}
+
+.sale_item {
+  max-width: 265px;
+  text-align: center;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sale_item__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.sale_item__info {
+  color: #fff;
+  background-color: #1c62cd;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+}
+
+.sale_item__price {
+  text-align: right;
+}
+
+.price {
+  font-family: 'Barlow', sans-serif;
+  position: relative;
+}
+
+.sale_item__price_new {
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 32px;
+  color: #1c62cd;
+  margin-right: 6px;
+  padding-right: 20px;
+}
+
+.sale_item__price_new::after {
+  content: '';
+  background-image: url(../assets/icons-price.svg);
+  position: absolute;
+  right: 0;
+  width: 15px;
+  height: 18px;
+  top: 8px;
+}
+
+.sale_item__price_old {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #c4c4c4;
+  margin-right: 15px;
+  background-image: url('../assets/old-line.svg');
+  padding: 2px 5px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.sale_item__price_old::after {
+  content: '';
+  background-image: url('../assets/icons-price-old.svg');
+  position: absolute;
+  right: -10px;
+  width: 8px;
+  height: 9px;
+  top: 8px;
+}
+
+.sale_item__footer {
+  background-color: #f0f0f4;
+  padding: 25px 20px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.sale_item__footer span {
+  font-family: 'Barlow', sans-serif;
+  display: block;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1c62cd;
+  font-weight: 700;
+}
+
+.sale_item__title {
+  font-family: 'SFProDisplay-Bold', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #2f3035;
+  margin-bottom: 7px;
+}
+
+.banner-section__slider-img {
+  object-fit: cover;
+  min-height: 400px;
+}
+
+.sale_item__img {
+  object-fit: contain;
+  height: 176px;
+}
