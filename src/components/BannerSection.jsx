@@ -2,7 +2,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 
-import styles from './BannerSection.module.scss'
+import './BannerSection.scss'
 import BannerSliderImg from '../assets/banner-slider.jpg'
 import Sale1 from '../assets/content/sale-1.png'
 
@@ -23,8 +23,8 @@ const BannerSection = () => {
   return (
     <section className="banner-section page-section">
       <div className="container">
-        <div className={styles.banner_section__inner}>
-          <div className={styles.banner_section__slider}>
+        <div className="banner-section__inner">
+          <div className="banner-section__slider">
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={50}
@@ -37,30 +37,17 @@ const BannerSection = () => {
               {slides}
             </Swiper>
           </div>
-          <a
-            className={`${styles['sale_item']} ${styles['banner_section__item_top']}`}
-            href="/"
-          >
-            <div className={styles.sale_item__top}>
-              <p className={styles.sale_item__info}>акция</p>
-              <div className={styles.sale_item__price}>
-                <div
-                  className={`${styles.price} ${styles.sale_item__price_new}`}
-                >
-                  190 000
-                </div>
-                <div
-                  className={`${styles.price} ${styles.sale_item__price_old}`}
-                >
-                  225 000
-                </div>
+          <a className="sale-item banner-section__item-top" href="/">
+            <div className="sale-item__top">
+              <p className="sale-item__info">акция</p>
+              <div className="sale-item__price">
+                <div className="price sale-item__price-new">190 000</div>
+                <div className="price sale-item__price-old">225 000</div>
               </div>
             </div>
-            <img className={styles.sale_item__img} src={Sale1} alt="" />
-            <h5 className={styles.sale_item__title}>
-              Лодочный мотор Suzuki DF9.9BRS
-            </h5>
-            <p className={styles.sale_item__footer}>
+            <img className="sale-item__img" src={Sale1} alt="" />
+            <h5 className="sale-item__title">Лодочный мотор Suzuki DF9.9BRS</h5>
+            <p className="sale-item__footer">
               Акция действует до
               <span>31.08.2020</span>
             </p>

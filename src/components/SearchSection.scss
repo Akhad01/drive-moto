@@ -2,26 +2,26 @@
   margin-bottom: 25px;
 }
 
-.search__tabs_item {
+.search__tabs-item {
   padding: 11px 26px 12px;
 }
 
-.search__tabs_item--active {
+.search__tabs-item--active {
   font-family: 'SFProDisplay-Bold', sans-serif;
   background-color: #f0f0f4;
   border-radius: 5px;
   font-weight: 700;
 }
 
-.search__content_item {
+.search__content-item {
   display: block;
 }
 
-.search__content_form {
+.search__content-form {
   display: flex;
 }
 
-.search__content_input {
+.search__content-input {
   width: 100%;
   border-radius: 3px;
   background-color: #f0f0f4;
@@ -31,11 +31,11 @@
   line-height: 19px;
 }
 
-.search__content_input::placeholder {
+.search__content-input::placeholder {
   color: #656464;
 }
 
-.search__content_btn {
+.search__content-btn {
   font-family: 'SFProDisplay-Bold', sans-serif;
   color: #fff;
   background: #1c62cd;
