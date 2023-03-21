@@ -1,4 +1,7 @@
 import React from 'react'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import 'react-tabs/style/react-tabs.css'
+
 import './SearchSection.scss'
 
 const SearchSection = () => {
@@ -6,22 +9,14 @@ const SearchSection = () => {
     <div className="search page-section">
       <div className="container">
         <div className="search__inner">
-          <div className="search__tabs">
-            <a
-              className="search__tabs-item search__tabs-item--active"
-              href="#tab-1"
-            >
-              Поиск по номеру
-            </a>
-            <a className="search__tabs-item" href="#tab-2">
-              Поиск по марке
-            </a>
-            <a className="search__tabs-item" href="#tab-3">
-              Поиск по названию товара
-            </a>
-          </div>
-          <div className="search__content">
-            <div id="tab-1" className="search__content-item">
+          <Tabs>
+            <TabList>
+              <Tab>Поиск по номеру</Tab>
+              <Tab>Поиск по марке</Tab>
+              <Tab>Поиск по названию товара</Tab>
+            </TabList>
+
+            <TabPanel>
               <form className="search__content-form" action="">
                 <input
                   className="search__content-input"
@@ -32,8 +27,8 @@ const SearchSection = () => {
                   искать
                 </button>
               </form>
-            </div>
-            <div id="tab-2" className="search__content-item">
+            </TabPanel>
+            <TabPanel>
               <form className="search__content-form" action="">
                 <input
                   className="search__content-input"
@@ -44,8 +39,8 @@ const SearchSection = () => {
                   искать
                 </button>
               </form>
-            </div>
-            <div id="tab-3" className="search__content-item">
+            </TabPanel>
+            <TabPanel>
               <form className="search__content-form" action="">
                 <input
                   className="search__content-input"
@@ -56,8 +51,10 @@ const SearchSection = () => {
                   искать
                 </button>
               </form>
-            </div>
-          </div>
+            </TabPanel>
+          </Tabs>
+
+          <div className="search__content"></div>
         </div>
       </div>
     </div>
