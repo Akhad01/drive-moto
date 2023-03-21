@@ -21,7 +21,7 @@ const BannerSection = () => {
     </SwiperSlide>
   ))
   return (
-    <section className="banner-section">
+    <section className="banner-section page-section">
       <div className="container">
         <div className={styles.banner_section__inner}>
           <div className={styles.banner_section__slider}>
