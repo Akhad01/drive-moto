@@ -1,7 +1,5 @@
 import React from 'react'
 
-import styles from './Header.module.scss'
-
 const menuCategories = [
   {
     name: 'Квадроциклы',
@@ -39,12 +37,12 @@ const menuCategories = [
 
 const HeaderBottom = () => {
   return (
-    <div className={styles.header__bottom}>
+    <div className="header__bottom">
       <div className="container">
-        <ul className={styles.menu_categories}>
+        <ul className="menu-categories">
           {menuCategories.map((category) => (
-            <li key={category.id} className={styles.menu_categories__item}>
-              <a className={styles.menu_categories__link} href="/">
+            <li key={category.id} className="menu-categories__item">
+              <a className="menu-categories__link" href="/">
                 {category.name}
               </a>
             </li>

@@ -1,6 +1,5 @@
 import React from 'react'
 
-import styles from './Header.module.scss'
 import logo from '../../assets/logo.svg'
 import heart from '../../assets/heart.svg'
 import user from '../../assets/user.svg'
@@ -25,11 +24,11 @@ const HeaderTop = () => {
   return (
     <div className="header__top">
       <div className="container">
-        <div className={styles.header__top_inner}>
+        <div className="header__top-inner">
           <nav className="menu">
             <ul className="menu__list">
               {menuList.map((menu) => (
-                <li key={menu.id} className={styles.menu__item}>
+                <li key={menu.id} className="menu__item">
                   <a className="menu__link" href="/">
                     {menu.name}
                   </a>
@@ -40,26 +39,23 @@ const HeaderTop = () => {
           <a className="logo" href="/">
             <img className="logo__img" src={logo} alt="" />
           </a>
-          <div className={styles.header__box}>
-            <p className={styles.header_adress}>Москва, ул. Науки 25</p>
-            <ul className={styles.user__list}>
-              <li className={styles.user_list__item}>
-                <a className={styles.user_list__link} href="/">
-                  <img className="user_list__img" alt="" src={heart} />
+          <div className="header__box">
+            <p className="header-adress">Москва, ул. Науки 25</p>
+            <ul className="user__list">
+              <li className="user-list__item">
+                <a className="user-list__link" href="/">
+                  <img className="user-list__img" alt="" src={heart} />
                 </a>
               </li>
-              <li className={styles.user_list__item}>
-                <a className={styles.user_list__link} href="/">
-                  <img className="user_list__img" alt="" src={user} />
+              <li className="user-list__item">
+                <a className="user-list__link" href="/">
+                  <img className="user-list__img" alt="" src={user} />
                 </a>
               </li>
-              <li className={styles.user_list__item}>
-                <a
-                  className={`${styles['user_list__link']} ${styles.basket}`}
-                  href="/"
-                >
-                  <img className="user_list__img" alt="" src={basket} />
-                  <p className={styles.basket__num}>1</p>
+              <li className="user-list__item">
+                <a className="user-list__link basket" href="/">
+                  <img className="user-list__img" alt="" src={basket} />
+                  <p className="basket__num">1</p>
                 </a>
               </li>
             </ul>
