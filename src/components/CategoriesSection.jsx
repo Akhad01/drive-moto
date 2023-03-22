@@ -8,65 +8,63 @@ import Categories6 from '../assets/categories-6.png'
 
 import './CategoriesSection.scss'
 
+const categoriesItem = [
+  {
+    id: '1',
+    title: 'Квадроциклы',
+    linkMore: 'Подробее',
+    image: Categories1,
+  },
+  {
+    id: '2',
+    title: 'Гидроциклы',
+    linkMore: 'Подробее',
+    image: Categories2,
+  },
+  {
+    id: '3',
+    title: 'Катера',
+    linkMore: 'Подробее',
+    image: Categories3,
+  },
+  {
+    id: '4',
+    title: 'Снегоходы',
+    linkMore: 'Подробее',
+    image: Categories4,
+  },
+  {
+    id: '5',
+    title: 'Вездеходы',
+    linkMore: 'Подробее',
+    image: Categories5,
+  },
+  {
+    id: '6',
+    title: 'Двигатели',
+    linkMore: 'Подробее',
+    image: Categories6,
+  },
+]
+
 const CategoriesSection = () => {
   return (
     <section className="categories page-section">
       <div className="container">
         <div className="categories__inner">
-          <a className="categories__item" href="/#">
-            <div className="categories__item-info">
-              <h4 className="categories__item-title">Квадроциклы</h4>
-              <p className="categories__item-text">Подробее</p>
-            </div>
-            <div className="categories__item-img">
-              <img src={Categories1} alt="" />
-            </div>
-          </a>
-          <a className="categories__item" href="/#">
-            <div className="categories__item-info">
-              <h4 className="categories__item-title">Гидроциклы</h4>
-              <p className="categories__item-text">Подробее</p>
-            </div>
-            <div className="categories__item-img">
-              <img src={Categories2} alt="" />
-            </div>
-          </a>
-          <a className="categories__item" href="/#">
-            <div className="categories__item-info">
-              <h4 className="categories__item-title">Катера</h4>
-              <p className="categories__item-text">Подробее</p>
-            </div>
-            <div className="categories__item-img">
-              <img src={Categories3} alt="" />
-            </div>
-          </a>
-          <a className="categories__item" href="/#">
-            <div className="categories__item-info">
-              <h4 className="categories__item-title">Снегоходы</h4>
-              <p className="categories__item-text">Подробее</p>
-            </div>
-            <div className="categories__item-img">
-              <img src={Categories4} alt="" />
-            </div>
-          </a>
-          <a className="categories__item" href="/#">
-            <div className="categories__item-info">
-              <h4 className="categories__item-title">Вездеходы</h4>
-              <p className="categories__item-text">Подробее</p>
-            </div>
-            <div className="categories__item-img">
-              <img src={Categories5} alt="" />
-            </div>
-          </a>
-          <a className="categories__item" href="/#">
-            <div className="categories__item-info">
-              <h4 className="categories__item-title">Двигатели</h4>
-              <p className="categories__item-text">Подробее</p>
-            </div>
-            <div className="categories__item-img">
-              <img src={Categories6} alt="" />
-            </div>
-          </a>
+          {categoriesItem.map((category) => {
+            return (
+              <a className="categories__item" href="/#">
+                <div className="categories__item-info">
+                  <h4 className="categories__item-title">{category.title}</h4>
+                  <p className="categories__item-text">Подробее</p>
+                </div>
+                <div className="categories__item-img">
+                  <img src={category.image} alt="" />
+                </div>
+              </a>
+            )
+          })}
         </div>
       </div>
     </section>
