@@ -53,8 +53,6 @@ const SearchSection = () => {
               </form>
             </TabPanel>
           </Tabs>
-
-          <div className="search__content"></div>
         </div>
       </div>
     </div>
