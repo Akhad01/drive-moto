@@ -2,6 +2,7 @@ import './App.scss'
 import BannerSection from './components/BannerSection'
 import CategoriesSection from './components/CategoriesSection'
 import Header from './components/Header/Header'
+import ProductsSection from './components/ProductsSection'
 import SearchSection from './components/SearchSection'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <BannerSection />
       <SearchSection />
       <CategoriesSection />
+      <ProductsSection />
     </div>
   )
 }

@@ -12,37 +12,31 @@ const categoriesItem = [
   {
     id: '1',
     title: 'Квадроциклы',
-    linkMore: 'Подробее',
     image: Categories1,
   },
   {
     id: '2',
     title: 'Гидроциклы',
-    linkMore: 'Подробее',
     image: Categories2,
   },
   {
     id: '3',
     title: 'Катера',
-    linkMore: 'Подробее',
     image: Categories3,
   },
   {
     id: '4',
     title: 'Снегоходы',
-    linkMore: 'Подробее',
     image: Categories4,
   },
   {
     id: '5',
     title: 'Вездеходы',
-    linkMore: 'Подробее',
     image: Categories5,
   },
   {
     id: '6',
     title: 'Двигатели',
-    linkMore: 'Подробее',
     image: Categories6,
   },
 ]
@@ -54,7 +48,7 @@ const CategoriesSection = () => {
         <div className="categories__inner">
           {categoriesItem.map((category) => {
             return (
-              <a className="categories__item" href="/#">
+              <a key={category.id} className="categories__item" href="/#">
                 <div className="categories__item-info">
                   <h4 className="categories__item-title">{category.title}</h4>
                   <p className="categories__item-text">Подробее</p>
