@@ -10,10 +10,10 @@ const SearchSection = () => {
       <div className="container">
         <div className="search__inner">
           <Tabs>
-            <TabList>
-              <Tab>Поиск по номеру</Tab>
-              <Tab>Поиск по марке</Tab>
-              <Tab>Поиск по названию товара</Tab>
+            <TabList className="search__tabs">
+              <Tab className="search__tabs-item">Поиск по номеру</Tab>
+              <Tab className="search__tabs-item">Поиск по марке</Tab>
+              <Tab className="search__tabs-item">Поиск по названию товара</Tab>
             </TabList>
 
             <TabPanel>

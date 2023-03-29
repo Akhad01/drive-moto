@@ -117,3 +117,25 @@
   object-fit: contain;
   height: 176px;
 }
+
+.banner-section-block.swiper-button-next::after {
+  display: none;
+}
+
+.banner-section-block .swiper-button-next {
+  background-image: url(../assets/arrow-right.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.banner-section-block.swiper-button-prev::after {
+  display: none;
+}
+
+.banner-section-block .swiper-button-prev {
+  background-image: url(../assets/arrow-left.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}

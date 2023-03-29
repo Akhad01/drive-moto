@@ -26,13 +26,13 @@ const BannerSection = () => {
         <div className="banner-section__inner">
           <div className="banner-section__slider">
             <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              modules={[Navigation, Pagination]}
               spaceBetween={50}
               slidesPerView={1}
               navigation
               pagination={{ clickable: true }}
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
+              className="banner-section-block"
+              loop
             >
               {slides}
             </Swiper>
