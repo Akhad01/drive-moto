@@ -1,6 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
+import { Navigation, Pagination } from 'swiper'
 
 import './BannerSection.scss'
 import BannerSliderImg from '../assets/banner-slider.jpg'
