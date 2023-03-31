@@ -92,6 +92,7 @@ const ProductsTabs = () => {
   const handleHeartClick = () => {
     setIsHearted(!isHearted)
   }
+
   return (
     <Tabs>
       <TabList className="products__tabs">
@@ -106,7 +107,7 @@ const ProductsTabs = () => {
       <TabPanel>
         <Swiper
           modules={[Navigation]}
-          spaceBetween={29}
+          spaceBetween={30}
           slidesPerView={4}
           navigation
           loop
@@ -125,7 +126,7 @@ const ProductsTabs = () => {
                       className={`product-item__heart ${
                         isHearted ? 'product-item__heart--active' : ''
                       }`}
-                      onClick={handleHeartClick}
+                      onClick={() => handleHeartClick()}
                     ></button>
                     <button className="product-item__basket">
                       <img
