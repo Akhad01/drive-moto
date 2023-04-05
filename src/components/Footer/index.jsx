@@ -1,8 +1,9 @@
 import React from 'react'
 
-import './Footer.scss'
 import FooterBottom from './FooterBottom'
 import FooterTop from './FooterTop'
+
+import './Footer.scss'
 
 const Footer = () => {
   return (

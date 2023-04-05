@@ -1,10 +1,13 @@
 import React from 'react'
-import Categories1 from '../assets/categories-1.png'
-import Categories2 from '../assets/categories-2.png'
-import Categories3 from '../assets/categories-3.png'
-import Categories4 from '../assets/categories-4.png'
-import Categories5 from '../assets/categories-5.png'
-import Categories6 from '../assets/categories-6.png'
+
+import {
+  categories1,
+  categories2,
+  categories3,
+  categories4,
+  categories5,
+  categories6,
+} from '../assets'
 
 import './CategoriesSection.scss'
 
@@ -12,32 +15,32 @@ const categoriesItem = [
   {
     id: '1',
     title: 'Квадроциклы',
-    image: Categories1,
+    image: categories1,
   },
   {
     id: '2',
     title: 'Гидроциклы',
-    image: Categories2,
+    image: categories2,
   },
   {
     id: '3',
     title: 'Катера',
-    image: Categories3,
+    image: categories3,
   },
   {
     id: '4',
     title: 'Снегоходы',
-    image: Categories4,
+    image: categories4,
   },
   {
     id: '5',
     title: 'Вездеходы',
-    image: Categories5,
+    image: categories5,
   },
   {
     id: '6',
     title: 'Двигатели',
-    image: Categories6,
+    image: categories6,
   },
 ]
 

@@ -1,9 +1,6 @@
 import React from 'react'
 
-import Instagram from '../../assets/instagram.svg'
-import VK from '../../assets/vk.svg'
-import Facebook from '../../assets/facebook.svg'
-import YouTube from '../../assets/youtube.svg'
+import { instagram, facebook, vk, youTube } from '../../assets'
 
 const firstFooterList = [
   {
@@ -45,22 +42,22 @@ const secondFooterList = [
 
 const socialList = [
   {
-    img: Instagram,
+    img: instagram,
     id: '1',
     alt: 'instagram',
   },
   {
-    img: VK,
+    img: vk,
     id: '2',
     alt: 'vk',
   },
   {
-    img: Facebook,
+    img: facebook,
     id: '3',
     alt: 'facebook',
   },
   {
-    img: YouTube,
+    img: youTube,
     id: '4',
     alt: 'youtube',
   },

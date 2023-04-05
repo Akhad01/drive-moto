@@ -1,11 +1,11 @@
 import React from 'react'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper'
 
-import './BannerSection.scss'
-import BannerSliderImg from '../assets/banner-slider.jpg'
-import Sale1 from '../assets/content/sale-1.png'
+import { bannerSliderImg, sale1 } from '../assets'
 
+import './BannerSection.scss'
 import 'swiper/swiper-bundle.min.css'
 
 const BannerSection = () => {
@@ -14,7 +14,7 @@ const BannerSection = () => {
       <a className="banner-section__slider-item" href="/#">
         <img
           className="banner-section__slider-img"
-          src={BannerSliderImg}
+          src={bannerSliderImg}
           alt=""
         />
       </a>
@@ -45,7 +45,7 @@ const BannerSection = () => {
                 <div className="price sale-item__price-old">225 000</div>
               </div>
             </div>
-            <img className="sale-item__img" src={Sale1} alt="" />
+            <img className="sale-item__img" src={sale1} alt="" />
             <h5 className="sale-item__title">Лодочный мотор Suzuki DF9.9BRS</h5>
             <p className="sale-item__footer">
               Акция действует до

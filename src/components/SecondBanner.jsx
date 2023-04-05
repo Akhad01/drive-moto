@@ -1,15 +1,15 @@
 import React from 'react'
 
-import './SecondBanner.scss'
+import { banner } from '../assets'
 
-import Banner from '../assets/content/banner.jpg'
+import './SecondBanner.scss'
 
 const SecondBanner = () => {
   return (
     <div className="banner">
       <div className="container">
         <a className="banner__link" href="/#">
-          <img src={Banner} alt="" />
+          <img src={banner} alt="" />
         </a>
       </div>
     </div>

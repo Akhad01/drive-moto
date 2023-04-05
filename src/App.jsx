@@ -1,4 +1,3 @@
-import './App.scss'
 import BannerSection from './components/BannerSection'
 import CategoriesSection from './components/CategoriesSection'
 import Footer from './components/Footer'
@@ -7,6 +6,8 @@ import ProductPopular from './components/ProductPopular'
 import ProductsSection from './components/ProductsSection'
 import SearchSection from './components/SearchSection'
 import SecondBanner from './components/SecondBanner'
+
+import './App.scss'
 
 function App() {
   return (
