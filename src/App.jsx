@@ -1,24 +1,24 @@
-import BannerSection from './components/BannerSection'
-import CategoriesSection from './components/CategoriesSection'
+import { Routes, Route } from 'react-router-dom'
+
 import Footer from './components/Footer'
 import Header from './components/Header'
-import ProductPopular from './components/ProductPopular'
-import ProductsSection from './components/ProductsSection'
-import SearchSection from './components/SearchSection'
-import SecondBanner from './components/SecondBanner'
 
 import './App.scss'
+import Breadcrumbs from './components/Breadcrumbs'
+import Main from './components/Main'
+import Catalog from './components/Catalog'
+import Notfound from './components/Notfound'
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <BannerSection />
-      <SearchSection />
-      <CategoriesSection />
-      <ProductsSection />
-      <SecondBanner />
-      <ProductPopular />
+      <Breadcrumbs />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path=".catalog" element={<Catalog />} />
+        <Route path="*" element={<Notfound />} />
+      </Routes>
       <Footer />
     </div>
   )
