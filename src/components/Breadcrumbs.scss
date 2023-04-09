@@ -1,0 +1,27 @@
+.breadcrumbs {
+  margin-bottom: 40px;
+}
+
+.breadcrumbs__item {
+  display: inline-block;
+  padding-right: 16px;
+  margin-right: 10px;
+  position: relative;
+  font-size: 15px;
+  line-height: 18px;
+  color: #c4c4c4;
+}
+
+.breadcrumbs__item::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  background-image: url('../assets/link-arrow.svg');
+  width: 6px;
+  height: 9px;
+}
+
+.breadcrumbs__item:last-child::after {
+  display: none;
+}
