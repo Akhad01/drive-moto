@@ -25,6 +25,22 @@ import vk from './vk.svg'
 import facebook from './facebook.svg'
 import youTube from './youtube.svg'
 
+import lineBtn from './line-btn.svg'
+import gridBtn from './grid-btn.svg'
+
+import gidrotsikl1 from './content/gidrotsikl-1.png'
+import gidrotsikl2 from './content/gidrotsikl-2.png'
+import gidrotsikl3 from './content/gidrotsikl-3.png'
+import gidrotsikl4 from './content/gidrotsikl-4.png'
+import gidrotsikl5 from './content/gidrotsikl-5.png'
+import gidrotsikl6 from './content/gidrotsikl-6.png'
+import gidrotsikl7 from './content/gidrotsikl-7.png'
+import gidrotsikl8 from './content/gidrotsikl-8.png'
+import gidrotsikl9 from './content/gidrotsikl-9.png'
+import gidrotsikl10 from './content/gidrotsikl-10.png'
+import gidrotsikl11 from './content/gidrotsikl-11.png'
+import gidrotsikl12 from './content/gidrotsikl-12.png'
+
 export {
   product1,
   product2,
@@ -48,4 +64,18 @@ export {
   facebook,
   vk,
   youTube,
+  lineBtn,
+  gridBtn,
+  gidrotsikl1,
+  gidrotsikl2,
+  gidrotsikl3,
+  gidrotsikl4,
+  gidrotsikl5,
+  gidrotsikl6,
+  gidrotsikl7,
+  gidrotsikl8,
+  gidrotsikl9,
+  gidrotsikl10,
+  gidrotsikl11,
+  gidrotsikl12,
 }

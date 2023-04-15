@@ -16,7 +16,7 @@ function App() {
       <Breadcrumbs />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path=".catalog" element={<Catalog />} />
+        <Route path="/catalog" element={<Catalog />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
       <Footer />

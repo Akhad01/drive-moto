@@ -40,51 +40,47 @@ const ProductsTabs = ({ cards, onToggleHeart }) => {
             cards.map((product) => {
               return (
                 <SwiperSlide key={product.id} className="swiper-slide">
-                  <div className="product-slider__item">
-                    <div
-                      className={`product-item__wrapper  ${
-                        product.isAvailable || 'product-item__not-available'
+                  <div
+                    className={`product-item__wrapper  ${
+                      product.isAvailable || 'product-item__not-available'
+                    }`}
+                  >
+                    <button
+                      className={`product-item__heart ${
+                        product.heart ? 'product-item__heart--active' : ''
+                      }`}
+                      onClick={() => onToggleHeart(product.id)}
+                    ></button>
+                    <button className="product-item__basket">
+                      <img
+                        src={basketWhite}
+                        alt=""
+                        className="product-item__basket--img"
+                      />
+                    </button>
+                    <a className="product-item__notify-link" href="/#">
+                      <span>Сообщить о поступлении</span>
+                    </a>
+                    <a
+                      href="/#"
+                      className={`product-item ${
+                        product.isSale && 'product-item--sale'
                       }`}
                     >
-                      <button
-                        className={`product-item__heart ${
-                          product.heart ? 'product-item__heart--active' : ''
-                        }`}
-                        onClick={() => onToggleHeart(product.id)}
-                      ></button>
-                      <button className="product-item__basket">
-                        <img
-                          src={basketWhite}
-                          alt=""
-                          className="product-item__basket--img"
-                        />
-                      </button>
-                      <a className="product-item__notify-link" href="/#">
-                        <span>Сообщить о поступлении</span>
-                      </a>
-                      <a
-                        href="/#"
-                        className={`product-item ${
-                          product.isSale && 'product-item--sale'
-                        }`}
-                      >
-                        <p className="product-item__hover-text">
-                          посмотреть товар
-                        </p>
-                        <img
-                          src={product.img}
-                          alt=""
-                          className="product-item__img"
-                        />
-                        <h4 className="product-item__title">{product.name}</h4>
-                        <p className="price product-item__price">
-                          {product.price}
-                        </p>
-                        <p className="product-item__notify-text">
-                          нет в наличии
-                        </p>
-                      </a>
-                    </div>
+                      <p className="product-item__hover-text">
+                        посмотреть товар
+                      </p>
+                      <img
+                        src={product.img}
+                        alt=""
+                        className="product-item__img"
+                      />
+                      <h4 className="product-item__title">{product.name}</h4>
+                      <p className="price product-item__price">
+                        {product.price}
+                      </p>
+                      <p className="product-item__notify-text">нет в наличии</p>
+                    </a>
                   </div>
                 </SwiperSlide>
               )
