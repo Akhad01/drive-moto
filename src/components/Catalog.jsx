@@ -3,10 +3,13 @@ import React, { useEffect, useState } from 'react'
 import api from '../api'
 import { basketWhite } from '../assets'
 
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+
 import './Catalog.scss'
 
 const Catalog = () => {
   const [cards, setCards] = useState()
+  const [isActiveDrop, setIsActiveDrop] = useState(false)
 
   useEffect(() => {
     api.catalogCards().then((data) => {
@@ -20,6 +23,10 @@ const Catalog = () => {
     const newCards = [...cards]
     newCards[elementIndex].heart = !newCards[elementIndex].heart
     setCards(newCards)
+  }
+
+  const handleToggleArrow = () => {
+    setIsActiveDrop(!isActiveDrop)
   }
 
   return (
@@ -130,7 +137,60 @@ const Catalog = () => {
             </div>
           </div>
           <div className="catalog__inner">
-            <aside className="catalog__inner-aside"></aside>
+            <aside className="catalog__inner-aside aside-filter">
+              <Tabs>
+                <TabList className="aside-filter__tabs">
+                  <Tab className="aside-filter__tab">
+                    <span>Параметры</span>
+                  </Tab>
+                  <Tab className="aside-filter__tab">
+                    <span>по марке</span>
+                  </Tab>
+                </TabList>
+                <TabPanel className="aside-filter__tabs-content">
+                  <form className="aside-filter__form">
+                    <ul className="aside-filter__list">
+                      <li className="aside-filter__item-drop">
+                        <p
+                          className={`aside-filter__item-title filter__item-drop ${
+                            isActiveDrop ? 'filter__item-drop--active' : ''
+                          }`}
+                          onClick={handleToggleArrow}
+                        >
+                          Наличие
+                        </p>
+                        {isActiveDrop && (
+                          <div className="aside-filter__item-content">
+                            <div className="aside-filter__content-box">
+                              <input id="cb1" type="checkbox" />
+                              <label
+                                className="aside-filter__content-label"
+                                htmlFor="cb1"
+                              >
+                                В наличие
+                              </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <input id="cb2" type="checkbox" />
+                              <label
+                                className="aside-filter__content-label"
+                                htmlFor="cb2"
+                              >
+                                Под заказ
+                              </label>
+                            </div>
+                          </div>
+                        )}
+                      </li>
+                      <li className="aside-filter__item-drop"></li>
+                      <li className="aside-filter__item-drop"></li>
+                      <li className="aside-filter__item-list"></li>
+                    </ul>
+                  </form>
+                </TabPanel>
+                <TabPanel className="aside-filter__tabs-content"></TabPanel>
+              </Tabs>
+            </aside>
             <div className="catalog__inner-list">
               {cards &&
                 cards.map((product) => {
