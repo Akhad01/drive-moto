@@ -4,12 +4,17 @@ import api from '../api'
 import { basketWhite } from '../assets'
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import ReactSlider from 'react-slider'
+import Select from 'react-select'
 
 import './Catalog.scss'
 
 const Catalog = () => {
   const [cards, setCards] = useState()
   const [isActiveDrop, setIsActiveDrop] = useState(false)
+  const [rangeValue, setRangeValue] = useState([])
+
+  console.log('rangeValue', rangeValue);
 
   useEffect(() => {
     api.catalogCards().then((data) => {
@@ -29,6 +34,35 @@ const Catalog = () => {
     setIsActiveDrop(!isActiveDrop)
   }
 
+  const options = [
+    { value: "90", label: "90" },
+    { value: "130", label: "130" },
+    { value: "154", label: "154" },
+    { value: "230", label: "230" },
+    { value: "300", label: "300" },
+
+  ]
+
+  const customStyles = {option: (baseStyles) => ({
+    ...baseStyles,
+    backgroundColor: "white",
+    ":hover": {
+       backgroundColor: "rgba(107, 126, 172, 0.05)"
+    },
+    color: "rgba(0, 0, 0, 0.60)",
+    }), control: (baseStyles) => ({
+      ...baseStyles,
+      border: "none",
+      ":hover": {
+        border: "none",
+        boxShadow: "none"
+      },
+
+    }), menu: (baseStyles) => ({
+      ...baseStyles,
+      borderRadius: "none"
+    })}
+
   return (
     <div>
       <section className="catalog">
@@ -42,12 +76,7 @@ const Catalog = () => {
               <button>еще</button>
             </div>
             <div className="catalog__filter-btn">
-              <select>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-              </select>
+              <Select />
               <button className="catalog__filter-btngrid">
                 <svg
                   width="23"
@@ -162,29 +191,114 @@ const Catalog = () => {
                         {isActiveDrop && (
                           <div className="aside-filter__item-content">
                             <div className="aside-filter__content-box">
-                              <input id="cb1" type="checkbox" />
-                              <label
-                                className="aside-filter__content-label"
-                                htmlFor="cb1"
-                              >
-                                В наличие
+                            <label className="checkbox style-checkbox">
+                              <input type="checkbox" />
+                              <div className="checkbox__checkmark"></div>
+                              <div className="checkbox__body">В наличие</div>
+                            </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                            <label className="checkbox style-checkbox">
+                              <input type="checkbox" />
+                              <div className="checkbox__checkmark"></div>
+                              <div className="checkbox__body">Под заказ</div>
+                            </label>
+                            </div>
+                          </div>
+                        )}
+                      </li>
+                      <li className="aside-filter__item-drop">
+                      <p
+                          className={`aside-filter__item-title filter__item-drop ${
+                            isActiveDrop ? 'filter__item-drop--active' : ''
+                          }`}
+                          onClick={handleToggleArrow}
+                        >
+                          Новинки
+                        </p>
+                        {isActiveDrop && (
+                          <div className="aside-filter__item-content aside-filter__item-content-radio">
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="radio" name='radio' />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">Все</div>
+                              </label>  
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="radio" name='radio' />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">Новинки</div>
                               </label>
                             </div>
                             <div className="aside-filter__content-box">
-                              <input id="cb2" type="checkbox" />
-                              <label
-                                className="aside-filter__content-label"
-                                htmlFor="cb2"
-                              >
-                                Под заказ
+                              <label className="checkbox style-checkbox">
+                                <input type="radio" name='radio' />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">Акции</div>
                               </label>
                             </div>
                           </div>
                         )}
                       </li>
-                      <li className="aside-filter__item-drop"></li>
-                      <li className="aside-filter__item-drop"></li>
-                      <li className="aside-filter__item-list"></li>
+                      <li className="aside-filter__item-drop">
+                        <p
+                            className={`aside-filter__item-title filter__item-drop ${
+                              isActiveDrop ? 'filter__item-drop--active' : ''
+                            }`}
+                            onClick={handleToggleArrow}
+                        >
+                          Цена
+                        </p>
+                          {isActiveDrop && (
+                            <div className="aside-filter__item-content">
+                              <ReactSlider
+                                className="horizontal-slider"
+                                thumbClassName="example-thumb"
+                                trackClassName="example-track"
+                                defaultValue={[200000, 360000]}
+                                ariaLabel
+                                max={500000}
+                                min={100000}
+                                onChange={(value, index) => setRangeValue(value)}
+                                
+                              />
+                              <div className="range-parameters">
+                                <div className="range-parameter">от &nbsp;<span>100 000</span></div>
+                                <div className="range-parameter">до &nbsp;<span>500 000</span></div>
+                              </div>
+                            </div>
+                            )}
+                        </li>
+                      <li className="aside-filter__item-list">
+                        <div className="filter__item-list">
+                          <p className="filter__item-list--title">Мощность, л.с.</p>
+                          <Select 
+                            styles={customStyles} 
+                            className='filter__item-list--select' 
+                            defaultValue={options[0]} 
+                            options={options} 
+                          />
+                        </div>
+                        <div className="filter__item-list">
+                          <p className="filter__item-list--title">Мощность двигателя, л.с.</p>
+                          <Select 
+                          
+                            styles={customStyles} 
+                            className='filter__item-list--select' 
+                            defaultValue={options[0]} 
+                            options={options} />
+                        </div>
+                        <div className="filter__item-list">
+                          <p className="filter__item-list--title">Макс. скорость</p>
+                          <Select 
+                            styles={customStyles} 
+                            className='filter__item-list--select' 
+                            defaultValue={options[0]} 
+                            options={options} />
+                        </div>
+                      </li>
                     </ul>
                   </form>
                 </TabPanel>
