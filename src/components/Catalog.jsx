@@ -339,8 +339,6 @@ const Catalog = () => {
                         )}
                       </li>
 
-
-
                       <li className="aside-filter__item-drop">
                         <p
                           className={`aside-filter__item-title filter__item-drop ${
@@ -352,16 +350,17 @@ const Catalog = () => {
                         </p>
                         {isActiveDrop && (
                           <div className="aside-filter__item-content">
+                            <input className='filter-search' placeholder='Введите модель' type="text" />
                             <div className="aside-filter__content-box">
                               <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
+                                <input type="checkbox" checked />
                                 <div className="checkbox__checkmark"></div>
                                 <div className="checkbox__body">Sea-doo Spark 2</div>
                               </label>
                             </div>
                             <div className="aside-filter__content-box">
                               <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
+                                <input type="checkbox" checked />
                                 <div className="checkbox__checkmark"></div>
                                 <div className="checkbox__body">SeaDoo Spark 90</div>
                               </label>
@@ -379,6 +378,9 @@ const Catalog = () => {
                                 <div className="checkbox__checkmark"></div>
                                 <div className="checkbox__body">SeaDoo GTR 230</div>
                               </label>
+                            </div>
+                            <div className="filter-more">
+                              <button className='filter-more__btn' href="#">Показать еще</button>
                             </div>
                           </div>
                         )}
