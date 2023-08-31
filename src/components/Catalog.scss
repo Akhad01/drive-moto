@@ -120,6 +120,7 @@ button.catalog__filter-btnline {
   font-family: 'SFProDisplay-Bold', sans-serif;
   color: #2f3035;
   font-weight: 700;
+  outline: none;
 }
 
 .aside-filter__tab.react-tabs__tab--selected span {
@@ -163,7 +164,7 @@ button.catalog__filter-btnline {
 .aside-filter__item-content {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 10px;
   transform: translateY(-150%);
   animation: ani 1s forwards;
 }
@@ -175,6 +176,7 @@ button.catalog__filter-btnline {
 
 .aside-filter__content-box {
   width: 50%;
+  margin-bottom: 10px;
 }
 
 .aside-filter__content-label {
@@ -208,6 +210,10 @@ button.catalog__filter-btnline {
 
 .checkbox.style-checkbox input:checked~.checkbox__checkmark:after {
   opacity: 1;
+}
+
+.checkbox__checkmark.radio__checkmark::after   {
+  display: none;
 }
 
 .checkbox.style-checkbox:hover input~.checkbox__checkmark {
@@ -349,6 +355,21 @@ button.catalog__filter-btnline {
 
 .css-15lsz6c-indicatorContainer {
   padding: 1px !important;
+}
+
+.filter-more {
+  width: 100%;
+}
+
+.filter-more__btn {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  color: #1C62CD;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #1C62CD;
+  padding: 0;
 }
 
 

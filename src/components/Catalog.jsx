@@ -221,21 +221,21 @@ const Catalog = () => {
                             <div className="aside-filter__content-box">
                               <label className="checkbox style-checkbox">
                                 <input type="radio" name='radio' />
-                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__checkmark radio__checkmark"></div>
                                 <div className="checkbox__body">Все</div>
                               </label>  
                             </div>
                             <div className="aside-filter__content-box">
                               <label className="checkbox style-checkbox">
                                 <input type="radio" name='radio' />
-                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__checkmark radio__checkmark"></div>
                                 <div className="checkbox__body">Новинки</div>
                               </label>
                             </div>
                             <div className="aside-filter__content-box">
                               <label className="checkbox style-checkbox">
                                 <input type="radio" name='radio' />
-                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__checkmark radio__checkmark"></div>
                                 <div className="checkbox__body">Акции</div>
                               </label>
                             </div>
@@ -299,6 +299,149 @@ const Catalog = () => {
                             options={options} />
                         </div>
                       </li>
+
+                      <li className="aside-filter__item-drop">
+                        <p
+                          className={`aside-filter__item-title filter__item-drop ${
+                            isActiveDrop ? 'filter__item-drop--active' : ''
+                          }`}
+                          onClick={handleToggleArrow}
+                        >
+                          Бренд
+                        </p>
+                        {isActiveDrop && (
+                          <div className="aside-filter__item-content">
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">BRP</div>
+                              </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">Spark 2</div>
+                              </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">Spark 3 </div>
+                              </label>
+                            </div>
+                            <div className="filter-more">
+                              <button className='filter-more__btn' href="#">Показать еще</button>
+                            </div>
+                          </div>
+                        )}
+                      </li>
+
+
+
+                      <li className="aside-filter__item-drop">
+                        <p
+                          className={`aside-filter__item-title filter__item-drop ${
+                            isActiveDrop ? 'filter__item-drop--active' : ''
+                          }`}
+                          onClick={handleToggleArrow}
+                        >
+                          Модель
+                        </p>
+                        {isActiveDrop && (
+                          <div className="aside-filter__item-content">
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">Sea-doo Spark 2</div>
+                              </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">SeaDoo Spark 90</div>
+                              </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">SeaDoo GTI 155</div>
+                              </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">SeaDoo GTR 230</div>
+                              </label>
+                            </div>
+                          </div>
+                        )}
+                      </li>
+
+                      <li className="aside-filter__item-drop">
+                        <p
+                          className={`aside-filter__item-title filter__item-drop ${
+                            isActiveDrop ? 'filter__item-drop--active' : ''
+                          }`}
+                          onClick={handleToggleArrow}
+                        >
+                          Акции
+                        </p>
+                        {isActiveDrop && (
+                          <div className="aside-filter__item-content">
+                            <div className="aside-filter__content-box">
+                            <label className="checkbox style-checkbox">
+                              <input type="checkbox" />
+                              <div className="checkbox__checkmark"></div>
+                              <div className="checkbox__body">В наличие</div>
+                            </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                            <label className="checkbox style-checkbox">
+                              <input type="checkbox" />
+                              <div className="checkbox__checkmark"></div>
+                              <div className="checkbox__body">Под заказ</div>
+                            </label>
+                            </div>
+                          </div>
+                        )}
+                      </li>
+
+                      <li className="aside-filter__item-drop">
+                        <p
+                          className={`aside-filter__item-title filter__item-drop ${
+                            isActiveDrop ? 'filter__item-drop--active' : ''
+                          }`}
+                          onClick={handleToggleArrow}
+                        >
+                          Страны
+                        </p>
+                        {isActiveDrop && (
+                          <div className="aside-filter__item-content">
+                            <div className="aside-filter__content-box">
+                            <label className="checkbox style-checkbox">
+                              <input type="checkbox" />
+                              <div className="checkbox__checkmark"></div>
+                              <div className="checkbox__body">В наличие</div>
+                            </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                            <label className="checkbox style-checkbox">
+                              <input type="checkbox" />
+                              <div className="checkbox__checkmark"></div>
+                              <div className="checkbox__body">Под заказ</div>
+                            </label>
+                            </div>
+                          </div>
+                        )}
+                      </li>
+
                     </ul>
                   </form>
                 </TabPanel>
