@@ -427,18 +427,35 @@ const Catalog = () => {
                         {isActiveDrop && (
                           <div className="aside-filter__item-content">
                             <div className="aside-filter__content-box">
-                            <label className="checkbox style-checkbox">
-                              <input type="checkbox" />
-                              <div className="checkbox__checkmark"></div>
-                              <div className="checkbox__body">В наличие</div>
-                            </label>
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" checked />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">Россия</div>
+                              </label>
                             </div>
                             <div className="aside-filter__content-box">
-                            <label className="checkbox style-checkbox">
-                              <input type="checkbox" />
-                              <div className="checkbox__checkmark"></div>
-                              <div className="checkbox__body">Под заказ</div>
-                            </label>
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" checked />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">Германия</div>
+                              </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">Китай</div>
+                              </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">CША</div>
+                              </label>
+                            </div>
+                            <div className="filter-more">
+                              <button className='filter-more__btn' href="#">Показать еще</button>
                             </div>
                           </div>
                         )}
