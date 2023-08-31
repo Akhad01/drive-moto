@@ -386,7 +386,7 @@ const Catalog = () => {
                         )}
                       </li>
 
-                      <li className="aside-filter__item-drop">
+                      <li className="aside-filter__item-drop btn-checked">
                         <p
                           className={`aside-filter__item-title filter__item-drop ${
                             isActiveDrop ? 'filter__item-drop--active' : ''
@@ -398,18 +398,40 @@ const Catalog = () => {
                         {isActiveDrop && (
                           <div className="aside-filter__item-content">
                             <div className="aside-filter__content-box">
-                            <label className="checkbox style-checkbox">
-                              <input type="checkbox" />
-                              <div className="checkbox__checkmark"></div>
-                              <div className="checkbox__body">В наличие</div>
-                            </label>
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">
+                                  <span className='btn-checked__text'>SALE</span>
+                                </div>
+                              </label>
                             </div>
                             <div className="aside-filter__content-box">
-                            <label className="checkbox style-checkbox">
-                              <input type="checkbox" />
-                              <div className="checkbox__checkmark"></div>
-                              <div className="checkbox__body">Под заказ</div>
-                            </label>
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">
+                                  <span className='btn-checked__text'>NEW</span>
+                                </div>
+                              </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">
+                                  <span className='btn-checked__text'>HIT</span>
+                                </div>
+                              </label>
+                            </div>
+                            <div className="aside-filter__content-box">
+                              <label className="checkbox style-checkbox">
+                                <input type="checkbox" />
+                                <div className="checkbox__checkmark"></div>
+                                <div className="checkbox__body">
+                                  <span className='btn-checked__text'>ДИЛЕР</span>
+                                </div>
+                              </label>
                             </div>
                           </div>
                         )}

@@ -387,3 +387,49 @@ button.catalog__filter-btnline {
 .filter-search::placeholder {
   color: #BDBEC2;
 }
+
+.btn-checked .aside-filter__item-content {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.btn-checked .aside-filter__content-box {
+  width: auto;
+}
+
+.btn-checked .checkbox {
+  position: relative;
+  background-color: #F0F0F4;
+  height: 25px;
+  width: 63px;
+  color: #C4C4C4;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.btn-checked .checkbox__checkmark {
+  height: 25px !important;
+  width: 63px !important;
+  border: none !important;
+}
+
+
+.btn-checked .checkbox.style-checkbox .checkbox__checkmark {
+  background-color: #F0F0F4;
+}
+
+.btn-checked .checkbox.style-checkbox .checkbox__checkmark:after {
+  display: none;
+}
+
+.btn-checked input:checked ~ .checkbox__body .btn-checked__text {
+  color: #fff;
+}
+
+.btn-checked__text {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
