@@ -483,6 +483,13 @@ const Catalog = () => {
                         )}
                       </li>
 
+                      <li className='aside-filter__item-drop aside-filter__item-btn'>
+                        <button className='filter-btn__send filter-btn__send--active' type='submit'>ВЫБРАТЬ</button>
+                        <p className='filter__extra'>Дополнительные параметры</p>
+                        <div className="filter__extra-content">more</div>
+                        <button className='filter-btn__reset' type='submit'>Сбросить фильтр</button>
+                      </li>
+
                     </ul>
                   </form>
                 </TabPanel>
