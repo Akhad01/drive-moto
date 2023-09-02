@@ -31,6 +31,11 @@
   margin-left: 10px;
 }
 
+.catalog__filter-btn {
+  display: flex;
+  align-items: center;
+}
+
 .catalog__filter-btn button {
   background-color: transparent;
   border: none;
@@ -44,9 +49,29 @@
 }
 
 button.catalog__filter-btngrid {
+  width: 26px;
+  height: 21px;
 }
 
 button.catalog__filter-btnline {
+  width: 25px;
+  height: 19px;
+}
+
+.catalog__filter-button {
+  opacity: 0.3;
+}
+
+.catalog__filter-button--active {
+  opacity: 1;
+}
+
+.select-item {
+  border: 1px solid #D7D9DF;
+  font-size: 14px;
+  line-height: 17px;
+  margin-right: 34px;
+  padding: 8px 20px 8px 20px;
 }
 
 .catalog__inner {
@@ -348,6 +373,10 @@ button.catalog__filter-btnline {
   display: none;
 }
 
+.css-1fdsijx-ValueContainer {
+  margin-right: 10px;
+}
+
 .css-1fdsijx-ValueContainer,
 .css-1xc3v61-indicatorContainer {
   padding: 1px !important;
@@ -484,4 +513,28 @@ button.catalog__filter-btnline {
   font-weight: 400;
   line-height: 16px;
   border-bottom: 1px solid #C4C4C4;
+}
+
+.css-13cymwt-control {
+  border: none !important;
+  min-height: 17px !important;
+} 
+
+.css-t3ipsp-control {
+  min-height: 17px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.css-1dimb5e-singleValue {
+  margin: 0 !important;
+}
+
+.css-qbdosj-Input {
+  padding: 0 !important;
+  margin: 0 !important;
+}  
+
+.css-t3ipsp-control:hover {
+  border-color: red !important;
 }

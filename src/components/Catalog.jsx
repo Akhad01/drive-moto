@@ -43,6 +43,12 @@ const Catalog = () => {
 
   ]
 
+  const optionsItem = [
+    {value: "По полулярности1", label: "По полулярности1"},
+    {value: "По полулярности2", label: "По полулярности2"},
+    {value: "По полулярности3", label: "По полулярности3"},
+  ]
+
   const customStyles = {option: (baseStyles) => ({
     ...baseStyles,
     backgroundColor: "white",
@@ -52,6 +58,7 @@ const Catalog = () => {
     color: "rgba(0, 0, 0, 0.60)",
     }), control: (baseStyles) => ({
       ...baseStyles,
+      boxShadow: "none",
       border: "none",
       ":hover": {
         border: "none",
@@ -76,62 +83,18 @@ const Catalog = () => {
               <button>еще</button>
             </div>
             <div className="catalog__filter-btn">
-              <Select />
-              <button className="catalog__filter-btngrid">
-                <svg
-                  width="23"
-                  height="21"
-                  viewBox="0 0 23 21"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="1"
-                    y="1"
-                    width="21"
-                    height="19"
-                    stroke="#2F3035"
-                    strokeWidth="2"
-                  />
-                  <rect
-                    x="7"
-                    y="6"
-                    width="2"
-                    height="2"
-                    fill="#2F3035"
-                    stroke="#2F3035"
-                    strokeWidth="2"
-                  />
-                  <rect
-                    x="7"
-                    y="13"
-                    width="2"
-                    height="2"
-                    fill="#2F3035"
-                    stroke="#2F3035"
-                    strokeWidth="2"
-                  />
-                  <rect
-                    x="14"
-                    y="6"
-                    width="2"
-                    height="2"
-                    fill="#2F3035"
-                    stroke="#2F3035"
-                    strokeWidth="2"
-                  />
-                  <rect
-                    x="14"
-                    y="13"
-                    width="2"
-                    height="2"
-                    fill="#2F3035"
-                    stroke="#2F3035"
-                    strokeWidth="2"
-                  />
+              <Select className='select-item' defaultValue={optionsItem[0]} options={optionsItem} />
+              <button className="catalog__filter-btngrid catalog__filter-button catalog__filter-button--active">
+                <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="1" width="21" height="19" stroke="#2F3035" stroke-width="2"/>
+                  <rect x="7" y="6" width="2" height="2" fill="#2F3035" stroke="#2F3035" stroke-width="2"/>
+                  <rect x="7" y="13" width="2" height="2" fill="#2F3035" stroke="#2F3035" stroke-width="2"/>
+                  <rect x="14" y="6" width="2" height="2" fill="#2F3035" stroke="#2F3035" stroke-width="2"/>
+                  <rect x="14" y="13" width="2" height="2" fill="#2F3035" stroke="#2F3035" stroke-width="2"/>
                 </svg>
+
               </button>
-              <button className="catalog__filter-btnline">
+              <button className="catalog__filter-btnline catalog__filter-button">
                 <svg
                   width="25"
                   height="19"
