@@ -4,17 +4,18 @@ import api from '../api'
 import { basketWhite } from '../assets'
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import ReactSlider from 'react-slider'
 import Select from 'react-select'
 
 import './Catalog.scss'
+import AsideFilterContent from './AsideFilterContent'
+import MoreButton from './MoreButton'
+import RangeSlider from './ReactSlider'
+import FilterItem from './FilterItem'
 
 const Catalog = () => {
   const [cards, setCards] = useState()
   const [isActiveDrop, setIsActiveDrop] = useState(false)
-  const [rangeValue, setRangeValue] = useState([])
 
-  console.log('rangeValue', rangeValue);
 
   useEffect(() => {
     api.catalogCards().then((data) => {
@@ -70,6 +71,56 @@ const Catalog = () => {
       borderRadius: "none"
     })}
 
+
+  const component = [
+    {
+      title: "Наличие",
+      key: "1",
+      component: (props) => <FilterItem {...props} />,
+      filterItem: [
+        {
+            type: "checkbox",
+            key: "1",
+            title: "В наличие",
+            component: (props) =>  <AsideFilterContent {...props} />
+        },
+        {
+            type: "checkbox",
+            key: "2",
+            title: "Под заказ",
+            component: (props) => <AsideFilterContent {...props}  />
+        }
+      ]
+    },
+    {
+      title: "Новинки",
+      key: "2",
+      isRadio: true,
+      component: (props) => <FilterItem {...props} />,
+      filterItem: [
+        {
+            type: "radio",
+            key: "1",
+            title: "Все",
+            component: (props) =>  <AsideFilterContent {...props} />
+        },
+        {
+            type: "radio",
+            key: "2",
+            title: "Новинки",
+            component: (props) => <AsideFilterContent {...props}  />
+        },
+        {
+          type: "radio",
+          key: "3",
+          title: "Акции",
+          component: (props) => <AsideFilterContent {...props}  />
+      }
+      ]
+
+    }
+  ]
+
   return (
     <div>
       <section className="catalog">
@@ -86,13 +137,12 @@ const Catalog = () => {
               <Select className='select-item' defaultValue={optionsItem[0]} options={optionsItem} />
               <button className="catalog__filter-btngrid catalog__filter-button catalog__filter-button--active">
                 <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1" y="1" width="21" height="19" stroke="#2F3035" stroke-width="2"/>
-                  <rect x="7" y="6" width="2" height="2" fill="#2F3035" stroke="#2F3035" stroke-width="2"/>
-                  <rect x="7" y="13" width="2" height="2" fill="#2F3035" stroke="#2F3035" stroke-width="2"/>
-                  <rect x="14" y="6" width="2" height="2" fill="#2F3035" stroke="#2F3035" stroke-width="2"/>
-                  <rect x="14" y="13" width="2" height="2" fill="#2F3035" stroke="#2F3035" stroke-width="2"/>
+                  <rect x="1" y="1" width="21" height="19" stroke="#2F3035" strokeWidth="2"/>
+                  <rect x="7" y="6" width="2" height="2" fill="#2F3035" stroke="#2F3035" strokeWidth="2"/>
+                  <rect x="7" y="13" width="2" height="2" fill="#2F3035" stroke="#2F3035" strokeWidth="2"/>
+                  <rect x="14" y="6" width="2" height="2" fill="#2F3035" stroke="#2F3035" strokeWidth="2"/>
+                  <rect x="14" y="13" width="2" height="2" fill="#2F3035" stroke="#2F3035" strokeWidth="2"/>
                 </svg>
-
               </button>
               <button className="catalog__filter-btnline catalog__filter-button">
                 <svg
@@ -142,69 +192,9 @@ const Catalog = () => {
                 <TabPanel className="aside-filter__tabs-content">
                   <form className="aside-filter__form">
                     <ul className="aside-filter__list">
-                      <li className="aside-filter__item-drop">
-                        <p
-                          className={`aside-filter__item-title filter__item-drop ${
-                            isActiveDrop ? 'filter__item-drop--active' : ''
-                          }`}
-                          onClick={handleToggleArrow}
-                        >
-                          Наличие
-                        </p>
-                        {isActiveDrop && (
-                          <div className="aside-filter__item-content">
-                            <div className="aside-filter__content-box">
-                            <label className="checkbox style-checkbox">
-                              <input type="checkbox" />
-                              <div className="checkbox__checkmark"></div>
-                              <div className="checkbox__body">В наличие</div>
-                            </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                            <label className="checkbox style-checkbox">
-                              <input type="checkbox" />
-                              <div className="checkbox__checkmark"></div>
-                              <div className="checkbox__body">Под заказ</div>
-                            </label>
-                            </div>
-                          </div>
-                        )}
-                      </li>
-                      <li className="aside-filter__item-drop">
-                      <p
-                          className={`aside-filter__item-title filter__item-drop ${
-                            isActiveDrop ? 'filter__item-drop--active' : ''
-                          }`}
-                          onClick={handleToggleArrow}
-                        >
-                          Новинки
-                        </p>
-                        {isActiveDrop && (
-                          <div className="aside-filter__item-content aside-filter__item-content-radio">
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="radio" name='radio' />
-                                <div className="checkbox__checkmark radio__checkmark"></div>
-                                <div className="checkbox__body">Все</div>
-                              </label>  
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="radio" name='radio' />
-                                <div className="checkbox__checkmark radio__checkmark"></div>
-                                <div className="checkbox__body">Новинки</div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="radio" name='radio' />
-                                <div className="checkbox__checkmark radio__checkmark"></div>
-                                <div className="checkbox__body">Акции</div>
-                              </label>
-                            </div>
-                          </div>
-                        )}
-                      </li>
+                      {
+                        component.map(comp => comp.component(comp))
+                      }
                       <li className="aside-filter__item-drop">
                         <p
                             className={`aside-filter__item-title filter__item-drop ${
@@ -216,21 +206,7 @@ const Catalog = () => {
                         </p>
                           {isActiveDrop && (
                             <div className="aside-filter__item-content">
-                              <ReactSlider
-                                className="horizontal-slider"
-                                thumbClassName="example-thumb"
-                                trackClassName="example-track"
-                                defaultValue={[200000, 360000]}
-                                ariaLabel
-                                max={500000}
-                                min={100000}
-                                onChange={(value, index) => setRangeValue(value)}
-                                
-                              />
-                              <div className="range-parameters">
-                                <div className="range-parameter">от &nbsp;<span>100 000</span></div>
-                                <div className="range-parameter">до &nbsp;<span>500 000</span></div>
-                              </div>
+                              <RangeSlider />
                             </div>
                             )}
                         </li>
@@ -263,6 +239,7 @@ const Catalog = () => {
                         </div>
                       </li>
 
+
                       <li className="aside-filter__item-drop">
                         <p
                           className={`aside-filter__item-title filter__item-drop ${
@@ -274,30 +251,10 @@ const Catalog = () => {
                         </p>
                         {isActiveDrop && (
                           <div className="aside-filter__item-content">
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">BRP</div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">Spark 2</div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">Spark 3 </div>
-                              </label>
-                            </div>
-                            <div className="filter-more">
-                              <button className='filter-more__btn' href="#">Показать еще</button>
-                            </div>
+                            <AsideFilterContent type="checkbox" title="BRP" />
+                            <AsideFilterContent type="checkbox" title="Spark 2" />
+                            <AsideFilterContent type="checkbox" title="Spark 3" />
+                            <MoreButton />
                           </div>
                         )}
                       </li>
@@ -314,37 +271,11 @@ const Catalog = () => {
                         {isActiveDrop && (
                           <div className="aside-filter__item-content">
                             <input className='filter-search' placeholder='Введите модель' type="text" />
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" checked />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">Sea-doo Spark 2</div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" checked />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">SeaDoo Spark 90</div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">SeaDoo GTI 155</div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">SeaDoo GTR 230</div>
-                              </label>
-                            </div>
-                            <div className="filter-more">
-                              <button className='filter-more__btn' href="#">Показать еще</button>
-                            </div>
+                            <AsideFilterContent type="checkbox" title="Sea-doo Spark 2" />
+                            <AsideFilterContent type="checkbox" title="SeaDoo Spark 90" />
+                            <AsideFilterContent type="checkbox" title="SeaDoo GTI 155" />
+                            <AsideFilterContent type="checkbox" title="SeaDoo GTR 230" />
+                            <MoreButton />
                           </div>
                         )}
                       </li>
@@ -360,42 +291,10 @@ const Catalog = () => {
                         </p>
                         {isActiveDrop && (
                           <div className="aside-filter__item-content">
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">
-                                  <span className='btn-checked__text'>SALE</span>
-                                </div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">
-                                  <span className='btn-checked__text'>NEW</span>
-                                </div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">
-                                  <span className='btn-checked__text'>HIT</span>
-                                </div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">
-                                  <span className='btn-checked__text'>ДИЛЕР</span>
-                                </div>
-                              </label>
-                            </div>
+                            <AsideFilterContent type="checkbox" title="SALE" body={true} />
+                            <AsideFilterContent type="checkbox" title="NEW" body={true} />
+                            <AsideFilterContent type="checkbox" title="HIT" body={true} />
+                            <AsideFilterContent type="checkbox" title="ДИЛЕР" body={true} />
                           </div>
                         )}
                       </li>
@@ -411,37 +310,11 @@ const Catalog = () => {
                         </p>
                         {isActiveDrop && (
                           <div className="aside-filter__item-content">
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" checked />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">Россия</div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" checked />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">Германия</div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">Китай</div>
-                              </label>
-                            </div>
-                            <div className="aside-filter__content-box">
-                              <label className="checkbox style-checkbox">
-                                <input type="checkbox" />
-                                <div className="checkbox__checkmark"></div>
-                                <div className="checkbox__body">CША</div>
-                              </label>
-                            </div>
-                            <div className="filter-more">
-                              <button className='filter-more__btn' href="#">Показать еще</button>
-                            </div>
+                            <AsideFilterContent type="checkbox" title="Россия" />
+                            <AsideFilterContent type="checkbox" title="Германия" />
+                            <AsideFilterContent type="checkbox" title="Китай" />
+                            <AsideFilterContent type="checkbox" title="CША" />
+                            <MoreButton />
                           </div>
                         )}
                       </li>
