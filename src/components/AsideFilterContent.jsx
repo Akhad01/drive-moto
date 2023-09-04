@@ -10,7 +10,7 @@ const AsideFilterContent = ({type, title, body}) => {
           {
             body ? <span className='btn-checked__text'>{title}</span> : title
           }
-          </div>
+        </div>
       </label>
     </div>
   )

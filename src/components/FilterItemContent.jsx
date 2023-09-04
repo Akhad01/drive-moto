@@ -11,8 +11,6 @@ const FilterItemContent = ({ filterItem, isRadio }) => {
                 return filter.component(filter)
             })
         }
-        {/* <AsideFilterContent type="checkbox" title="В наличие" />
-        <AsideFilterContent type="checkbox" title="Под заказ" /> */}
     </div>
   )
 }

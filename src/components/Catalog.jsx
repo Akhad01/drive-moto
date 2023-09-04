@@ -9,7 +9,7 @@ import Select from 'react-select'
 import './Catalog.scss'
 import AsideFilterContent from './AsideFilterContent'
 import MoreButton from './MoreButton'
-import RangeSlider from './ReactSlider'
+import RangeSlider from './RangeSlider'
 import FilterItem from './FilterItem'
 
 const Catalog = () => {
@@ -117,8 +117,15 @@ const Catalog = () => {
           component: (props) => <AsideFilterContent {...props}  />
       }
       ]
-
-    }
+    },
+    {
+      title: "Цена",
+      key: "3",
+      isRadio: false,
+      isRange: true,
+      component: (props) => <FilterItem {...props} />,
+      filterItem: null
+    },
   ]
 
   return (
@@ -195,21 +202,6 @@ const Catalog = () => {
                       {
                         component.map(comp => comp.component(comp))
                       }
-                      <li className="aside-filter__item-drop">
-                        <p
-                            className={`aside-filter__item-title filter__item-drop ${
-                              isActiveDrop ? 'filter__item-drop--active' : ''
-                            }`}
-                            onClick={handleToggleArrow}
-                        >
-                          Цена
-                        </p>
-                          {isActiveDrop && (
-                            <div className="aside-filter__item-content">
-                              <RangeSlider />
-                            </div>
-                            )}
-                        </li>
                       <li className="aside-filter__item-list">
                         <div className="filter__item-list">
                           <p className="filter__item-list--title">Мощность, л.с.</p>
@@ -223,11 +215,11 @@ const Catalog = () => {
                         <div className="filter__item-list">
                           <p className="filter__item-list--title">Мощность двигателя, л.с.</p>
                           <Select 
-                          
                             styles={customStyles} 
                             className='filter__item-list--select' 
                             defaultValue={options[0]} 
-                            options={options} />
+                            options={options} 
+                          />
                         </div>
                         <div className="filter__item-list">
                           <p className="filter__item-list--title">Макс. скорость</p>

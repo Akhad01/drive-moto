@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AsideFilterContent from './AsideFilterContent'
 import FilterItemContent from './FilterItemContent'
+import RangeSlider from './RangeSlider'
 
 const FilterItem = (props) => {
     const [isActiveDrop, setIsActiveDrop] = useState(false)
@@ -19,9 +20,12 @@ const FilterItem = (props) => {
             >
                 {props.title}
             </p>
-            {isActiveDrop && (
+            {isActiveDrop && 
+                (props.isRange ? 
+                <RangeSlider /> : 
                 <FilterItemContent filterItem={props.filterItem} {...props} />
-            )}
+                )
+            }
         </li>
     )
 }
