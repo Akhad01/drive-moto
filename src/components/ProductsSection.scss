@@ -10,9 +10,15 @@
 .product-item__wrapper {
   position: relative;
   width: 265px;
+  transition: all .3s;
+}
+
+.product-item__wrapper.product-item__wrapper--list {
+  width: 100%;
 }
 
 .product-item {
+  width: 100%;
   min-height: 403px;
   border: 1px solid #cdcdcd;
   border-radius: 3px;
