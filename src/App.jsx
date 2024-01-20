@@ -8,6 +8,7 @@ import Breadcrumbs from './components/Breadcrumbs'
 import Main from './components/Main'
 import Catalog from './components/Catalog'
 import Notfound from './components/Notfound'
+import ProductPage from './components/ProductPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/catalog" element={<Catalog />} />
+        <Route path='/product-page' element={<ProductPage />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
       <Footer />

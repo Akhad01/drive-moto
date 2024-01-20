@@ -41,6 +41,10 @@ import gidrotsikl10 from './content/gidrotsikl-10.png'
 import gidrotsikl11 from './content/gidrotsikl-11.png'
 import gidrotsikl12 from './content/gidrotsikl-12.png'
 
+import gidrotsikLarge from '../assets/content/gidrotsikl-large.png'
+import heartBtn from './heart.svg'
+import comparisonBtn from './comparison.svg'
+
 export {
   product1,
   product2,
@@ -78,4 +82,7 @@ export {
   gidrotsikl10,
   gidrotsikl11,
   gidrotsikl12,
+  gidrotsikLarge,
+  heartBtn,
+  comparisonBtn
 }
